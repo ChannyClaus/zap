@@ -49,6 +49,7 @@ var (
 // Attempting to register an encoder whose name is already taken returns an
 // error.
 func RegisterEncoder(name string, constructor func(zapcore.EncoderConfig) (zapcore.Encoder, error)) error {
+	fmt.Println("TEST")
 	_encoderMutex.Lock()
 	defer _encoderMutex.Unlock()
 	if name == "" {
